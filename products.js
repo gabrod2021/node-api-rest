@@ -1,7 +1,7 @@
 export const products=[
-  {id : 1,"producto": "zapatillas","color": "blanco","numeracion": 38,"stock": true,"cantidad": 56},
-  {id : 2,"producto": "remera","color": "azul","talle": "L","stock": true,"cantidad": 100},
-  {id:3,"producto": "short","color": "verde","talle": "L","stock": true,"cantidad": 124},
-  {id: 4,"producto": "joggin","color": "gris","talle": "XL","stock": true,"cantidad": 230},
-  {id:5,"producto": "calzas","color": "negro","talle": "M","stock": true,"cantidad": 89}
+  {id : 1,"nombre": "zapatillas","precio":30000,"cantidad":100},
+  {id : 2,"nombre": "remeras","precio":40000,"cantidad":200},
+  {id : 3,"nombre": "calzas","precio":20000,"cantidad":1000},
+  {id : 4,"nombre": "joggin","precio":50000,"cantidad":500},
+  {id : 5,"nombre": "short","precio":10000,"cantidad":160},
 ]

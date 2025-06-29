@@ -11,8 +11,8 @@ app.get('/products/', (req, res) => {
     //res.json(products);
     });
 app.get('/products/search', (req, res) => {
-    console.log(req.params);
-    res.json(params);
+    console.log(req.query);
+    res.json(products);
 
 });
 
@@ -32,5 +32,5 @@ res.json(product);
 
 const PORT = 3000
 app.listen(PORT, () => {
-    console.log(`Y el JSON en: http://localhost:${PORT}`);
+    console.log(`http://localhost:${PORT}`);
 });
