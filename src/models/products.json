@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "nombre": "zapatillas",
+    "precio": 24000,
+    "cantidad": 100,
+    "categoria": "calzado deportivo"
+  },
+  {
+    "id": 2,
+    "nombre": "remeras",
+    "precio": 25600,
+    "cantidad": 200,
+    "categoria": "remeras"
+  },
+  {
+    "id": 3,
+    "nombre": "calzas",
+    "precio": 16000,
+    "cantidad": 1000,
+    "categoria": "pantalones"
+  },
+  {
+    "id": 4,
+    "nombre": "joggin",
+    "precio": 3200,
+    "cantidad": 100,
+    "categoria": "pantalones"
+  },
+  {
+    "id": 5,
+    "nombre": "short",
+    "precio": 6400,
+    "cantidad": 160,
+    "categoria": "pantalones"
+  },
+  {
+    "id": 6,
+    "nombre": "zapatillas de trecking",
+    "precio": 40000,
+    "cantidad": 200,
+    "categoria": "calzado deportivo"
+  }
+]

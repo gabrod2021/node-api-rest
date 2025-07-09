@@ -1,4 +1,5 @@
-import * as service from "../services/products.service.js";
+//import * as service from "../services/products.service.js";
+import * as productService from "../services/products.service.js"; 
 
 export const getAllProducts = (req, res) => {
     res.json(service.getAllProducts());
@@ -28,19 +29,6 @@ res.json(product);
 
 };
 
-/*export const postProduct = (req, res) => {
-    console.log(req.body);
-    const {nombre, precio, cantidad} = req.body;
-    const newProduct ={
-        id: products.length + 1,
-        nombre,
-        precio,
-        cantidad
-    };
-    products.push(newProduct);
-    res.status(201).json(newProduct);
-    
-};*/
 
 export const postProduct = (req, res) => {
 
@@ -60,7 +48,6 @@ export const postProduct = (req, res) => {
 export const putProduct = (req, res) => {
     const productId = parseInt(req.params.id, 10);
     const { precio, cantidad } = req.body;
-
 
     const updatedProduct = service.updateProduct(productId, precio, cantidad);
 
@@ -82,4 +69,22 @@ export const delProduct = (req, res) => {
     }
 
     res.status(202).json({ message: "Solicitud de eliminación aceptada" });
+};
+
+export const applyDiscountToCategoryController = (req, res) => {
+    const { categoria, discount } = req.body; 
+
+    if (!categoria || typeof discount !== 'number' || discount <= 0 || discount >= 1) {
+        return res.status(400).json({ error: 'Categoría y/o descuento inválido.' }); 
+    }
+    try {
+        const updatedProducts = productService.applyDiscountCat(categoria, discount); 
+        res.status(200).json({ 
+            message: `Descuento aplicado a "${categoria}".`,
+            updatedProducts: updatedProducts
+        });
+    } catch (error) {
+        console.error("Error al aplicar descuento:", error);
+        res.status(500).json({ error: 'Hubo un problema al aplicar el descuento.' });
+    }
 };

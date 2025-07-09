@@ -4,7 +4,8 @@ import { getAllProducts,
         searchProducts,
         postProduct, 
         putProduct, 
-        delProduct } from '../controllers/products.controllers.js';
+        delProduct,
+        applyDiscountToCategoryController } from '../controllers/products.controllers.js';
 
 
 const router = Router();
@@ -21,6 +22,8 @@ router.post('/products', postProduct);
 router.put('/products/:id', putProduct);
 
 router.delete('/products/:id', delProduct);
+
+router.put('/discount', applyDiscountToCategoryController); 
 
 export default router;
 
