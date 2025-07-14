@@ -1,43 +1,37 @@
 
 import * as model from '../models/products.model.js';
 
-export const getAllProducts = () => {
-    return model.getAllProducts();
+export const getAllProducts = async() => {
+    return await model.getAllProducts();
 };
 
-export const getProductsById = (id) => {
-    const productId = parseInt(id, 10);
-    return model.getProductsById(id).find((item) =>item.id === productId);
+export const getProductsById = async(id) => {
+    return await model.getProductsById(id);
 };
 
-export const createProduct = (nombre, precio, cantidad) => {
-    return model.createProduct(nombre, precio, cantidad);
-};
-
-
-export const updateProduct = (id, precio, cantidad) => {
-    const updatedProduct = model.updateProduct(id, precio, cantidad); 
-    return updatedProduct; 
+export const createProduct = async(nombre, precio, cantidad,categoria) => {
+    return await model.createProduct(nombre, precio, cantidad,categoria);
 };
 
 
-export const deleteProduct = (id) => {
-    return model.deleteProduct(id);
+export const updateProduct = async (id, updatedFields) => {
+    return await model.updateProduct(id, updatedFields);
+};
+
+
+export const deleteProduct = async (id) => {
+    return await model.deleteProduct(id);
 };   
 
-export const applyDiscountCat = (categoria, discount) => {
-    const currentProducts = model.getAllProducts(); 
-    const productsWithDiscount = currentProducts.map(product => {
-        if (product.categoria === categoria) { 
-            const newPrice = product.precio * (1 - discount); 
-            return { ...product, precio: newPrice }; 
-        }
-        return product;
-    });
+export const applyDiscountCat = async (categoria, discount) => {
+    if (typeof categoria !== 'string' || !categoria.trim()) {
+        throw new Error("La categoría debe ser una cadena de texto no vacía.");
+    }
+    if (typeof discount !== 'number' || discount <= 0 || discount >= 1) {
+        throw new Error("El porcentaje de descuento debe ser un número (decimal) entre 0 (exclusivo) y 1 (exclusivo).");
+    }
 
-    model.saveAllProducts(productsWithDiscount); 
+    const result = await model.applyDiscountToCategoryInFirestore(categoria, discount);
 
-    return productsWithDiscount;
-    console.log(productsWithDiscount);
-
+    return result; 
 };

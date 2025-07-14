@@ -1,44 +1,51 @@
 [
   {
-    "id": 1,
-    "nombre": "zapatillas",
-    "precio": 24000,
-    "cantidad": 100,
-    "categoria": "calzado deportivo"
-  },
-  {
-    "id": 2,
-    "nombre": "remeras",
-    "precio": 25600,
+    "id": "839ICweP26AaF2ALj6WD",
+    "precio": 32000,
     "cantidad": 200,
-    "categoria": "remeras"
+    "categoria": "calzado deportivo",
+    "nombre": "zapatillas de trecking"
   },
   {
-    "id": 3,
+    "id": "8Ku0UvsAJ00BezMPf1wb",
     "nombre": "calzas",
-    "precio": 16000,
+    "categoria": "pantalones",
     "cantidad": 1000,
-    "categoria": "pantalones"
+    "precio": 16000
   },
   {
-    "id": 4,
+    "id": "WwHszVCK3oBrQf4u4ryx",
     "nombre": "joggin",
-    "precio": 3200,
     "cantidad": 100,
+    "precio": 3200,
     "categoria": "pantalones"
   },
   {
-    "id": 5,
-    "nombre": "short",
-    "precio": 6400,
-    "cantidad": 160,
-    "categoria": "pantalones"
-  },
-  {
-    "id": 6,
-    "nombre": "zapatillas de trecking",
-    "precio": 40000,
+    "id": "XQ3fA9EXVoQToHJwHQmx",
     "cantidad": 200,
+    "categoria": "remeras",
+    "nombre": "remeras",
+    "precio": 25600
+  },
+  {
+    "id": "abZfLAC9DFByyfpchOya",
+    "nombre": "campera",
+    "cantidad": 1900,
+    "categoria": "abrigo",
+    "precio": 54000
+  },
+  {
+    "id": "e4xUAiGVHBwIYsfsbtR3",
+    "precio": 160000,
+    "cantidad": 1000,
+    "nombre": "zapatillas",
     "categoria": "calzado deportivo"
+  },
+  {
+    "id": "mBgZ70VmqXGacELqStSL",
+    "nombre": "short",
+    "cantidad": 160,
+    "precio": 6400,
+    "categoria": "pantalones"
   }
 ]

@@ -11,19 +11,19 @@ import { getAllProducts,
 const router = Router();
 
 
-router.get('/products/',getAllProducts);
-
 router.get('/products/search',searchProducts );
 
-router.get('/products/:id',getProductsById);
+router.get('/:id',getProductsById);
 
-router.post('/products', postProduct);
+router.get('/',getAllProducts);
 
-router.put('/products/:id', putProduct);
-
-router.delete('/products/:id', delProduct);
+router.post('/', postProduct);
 
 router.put('/discount', applyDiscountToCategoryController); 
+
+router.put('/:id', putProduct);
+
+router.delete('/:id', delProduct);
 
 export default router;
 
