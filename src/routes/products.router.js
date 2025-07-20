@@ -12,7 +12,7 @@ import { auth } from "../middlewares/auth.middleware.js";
 const router = Router();
 
 
-router.get('/products/search',searchProducts );
+router.get('/search',searchProducts );
 
 router.get('/:id',getProductsById);
 

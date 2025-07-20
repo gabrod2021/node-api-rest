@@ -19,6 +19,7 @@ export const searchProducts = async (req, res) => {
 
     const filteredProducts = products.filter((p) => 
         p.nombre.toLowerCase().includes(nombre.toLowerCase())
+    
 );
 res.json(filteredProducts);
 

@@ -17,6 +17,10 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get("/", (req, res) => {
+  res.json({ message: "Bienvenidos a la API REST" });
+});
+
 app.use('/api/products',productRouter);
 
 app.use((req, res, next) => {
