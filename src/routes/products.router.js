@@ -7,6 +7,7 @@ import { getAllProducts,
         delProduct,
         applyDiscountToCategoryController } from '../controllers/products.controllers.js';
 
+import { auth } from "../middlewares/auth.middleware.js";
 
 const router = Router();
 
@@ -17,13 +18,13 @@ router.get('/:id',getProductsById);
 
 router.get('/',getAllProducts);
 
-router.post('/', postProduct);
+router.post('/', auth, postProduct);
 
-router.put('/discount', applyDiscountToCategoryController); 
+router.put('/discount', auth, applyDiscountToCategoryController); 
 
-router.put('/:id', putProduct);
+router.put('/:id',auth, putProduct);
 
-router.delete('/:id', delProduct);
+router.delete('/:id', auth, delProduct);
 
 export default router;
 

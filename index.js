@@ -2,14 +2,21 @@ import "dotenv/config";
 import express from 'express'
 import cors from 'cors';
 import productRouter from './src/routes/products.router.js';
+import authRouter from './src/routes/auth.router.js';
+
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
+
+app.use(cors());
+
+app.use(authRouter);
+
 app.use((req, res, next) => {
     next();
 });
+
 app.use('/api/products',productRouter);
 
 app.use((req, res, next) => {
